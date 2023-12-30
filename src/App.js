@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios  from "axios";
 import './App.css'
 
@@ -30,12 +30,14 @@ function App(){
     // Update the state with the new input value
     setInputValue(event.target.value);
   };
-  //this part will change ,this is only a test and ex 
+ 
+  ;
+  
+
    
-    return (<div>
+    return (<div className="App">
 
         
-        <h1>the temperature in: {inputValue} is:{newData?.main.temp} C</h1>
 
 
    
@@ -43,6 +45,7 @@ function App(){
     
      {/* Form with onSubmit event */}
      <form onSubmit={handleFormSubmit}>
+        <h1 className="h1">Please enter the name of a City</h1>
        {/* Input element with onChange event */}
        <input
          type="text"
@@ -52,8 +55,30 @@ function App(){
        />
 
        {/* Submit button */}
+       <section className="butt">
+        
        <button type="submit">Submit</button>
+
+       </section>
+
      </form>  
+       <section className="stats">
+        <table>
+          <tr>
+
+          <td>temp: {newData?.main.temp}</td>
+          <td>feels like: {newData?.main.feels_like}</td>
+          </tr>
+          <tr>
+
+          <td>pressure: {newData?.main.pressure}</td>
+          <td>humidity: {newData?.main.humidity}</td>
+          </tr>
+          <li>visibility: {newData?.visibility}</li>
+        </table>
+       </section>
+
+
    
    </div>)
      
