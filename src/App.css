@@ -46,19 +46,34 @@ input{
 .butt{
 
     min-width: 200px;
-    max-width: 1700px;
+ 
     margin-top: 50px;
 }
 form{
+   
 text-align: center;
-max-width: 1700px;
-min-width: 300px;
+
 
  
 }
 form button {
-    margin-left:auto;
+   margin: auto auto;
 }
-tr{
-   margin: auto 20px;
+
+td{
+    padding-top: 20px;
+    font-size: 26px;
+    padding-left: 100px;
+  
+    
+  
+
+}
+.stats{
+    padding-top: 20px;
+    display: flex;
+
+    justify-content: center;
+    padding-bottom:28%;
+    
 }

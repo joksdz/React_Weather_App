@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Axios  from "axios";
 import './App.css'
 
@@ -66,15 +66,21 @@ function App(){
         <table>
           <tr>
 
-          <td>temp: {newData?.main.temp}</td>
-          <td>feels like: {newData?.main.feels_like}</td>
+          <td>temp: {Math.round(newData?.main.temp) }C</td>
+          <td>feels like: {Math.round(newData?.main.feels_like)}C</td>
           </tr>
           <tr>
 
-          <td>pressure: {newData?.main.pressure}</td>
-          <td>humidity: {newData?.main.humidity}</td>
+          <td>pressure: {newData?.main.pressure}hPa</td>
+          <td>humidity: {newData?.main.humidity}%</td>
           </tr>
-          <li>visibility: {newData?.visibility}</li>
+          <tr>
+            
+            <td>visibility: {newData?.visibility}m</td>
+            <td>wind speed: {newData?.wind.speed}m/s</td>
+            </tr>
+
+
         </table>
        </section>
 
