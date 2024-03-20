@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import Axios  from "axios";
+import React, { useEffect, useState } from "react";
 import './App.css'
-
+import Axios from 'axios';
 function App(){
     //make the data,city ,input value variables  
     const [newData , setNewData ] = useState(null);
@@ -11,9 +10,9 @@ function App(){
     useEffect(()=>{
        
 //axios fethces the data from the api of openweather using the city and the returned value is in metric
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e22c6eab2b32c01d528b9764c2620e28&units=metric`).then((res) => { setNewData(res.data) })
-    },[city])
+    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e22c6eab2b32c01d528b9764c2620e28&units=metric`).then((res) => {setNewData(res.data)})
     
+    },[city])
 
   // Event handler for the form submission
   const handleFormSubmit = (event) => {
@@ -68,6 +67,7 @@ function App(){
 
           <td>temp: {Math.round(newData?.main.temp) }C</td>
           <td>feels like: {Math.round(newData?.main.feels_like)}C</td>
+          <td>weather: {newData?.weather[0].description } <img src={`http://openweathermap.org/img/wn/${newData?.weather[0].icon}@2x.png`} alt="weather icon"/></td>
           </tr>
           <tr>
 
